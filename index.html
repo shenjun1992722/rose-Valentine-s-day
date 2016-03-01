@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
+    <!--设定离开网页不能从Cache中调出本地机的缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><!--清除缓存-->
+    <meta http-equiv="expires" content="-1"><!--网页到期时间,-1表示立即过期，防止重复提交-->
+
+    <title>贵人礼枪炮玫瑰</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+
+<script>
+</script>
+
+</head>
+
+<body>
+
+<header><img src="images/title.png" alt="title"></header>
+<div id="top">
+	<img src="images/diamond.png" width="6.4%" alt="diamond"/><span id="totalAmount">1000</span>
+	<span class="btn">
+		<button class="friend"></button>
+	</span>
+	<span class="btn">
+		<button class="focus"></button>
+	</span>
+</div>
+
+<div id="content">
+	<div class="first">
+		<div id="Sh">
+			<img src="images/sh.png" alt="Sh" class="city"><br/>
+			<button id="searchPotions"></button>
+		</div>
+		<div id="Paris">
+			<img src="images/paris.png" alt="Paris" class="city"><br/>
+			<button id="searchMagicWand"></button>			
+		</div>
+	</div>
+	<div class="second">
+		<div id="guiRenLi">
+			<img src="images/guirenli.png" alt="guiRenLi" class="city"><br/>
+			<button id="searchRose"></button>
+		</div>
+		<div id="NewYork">
+			<img src="images/newyork.png" alt="NewYork" class="city"><br/>
+			<button id="searchGift"></button>			
+		</div>	
+	</div>					
+</div>
+
+<footer>
+	<ul id="count">
+		<li class="potion">
+			<span id="potion">0</span>
+		</li>
+		<li class="rose">
+			<span id="rose">0</span>
+		</li>
+		<li class="magicWand">
+			<span id="magicWand">0</span>
+		</li>
+		<li class="gift">
+			<span id="gift">0</span>
+		</li>				
+	</ul>
+	<div id="exchanges"></div>
+	<div id="exchange1" class="none"></div>
+	<img src="images/star.png" alt="star" id="star" class="none"/>
+</footer>
+
+<!-- **********************以下需用JS加入********************** -->
+<!-- ***********遮罩层*********** -->
+<div class="mask none" ></div>
+
+<!-- *********关注界面******** -->
+<div id="focusView" class="none">
+	<img src="images/title2.png" alt="title2" class="title2"/>
+	<img src='images/wm.png' alt="wm" class="wm" />
+	<p>长按二维码，关注“贵人礼”<br/>
+	   可得20元<img src="images/money.png" alt="diamond" class="diamond"></p>
+</div>
+
+<!-- *********邀请好友界面******** -->
+<div id="friendView" class="none">
+	<img src="images/row.png" alt="row" class="row" />
+	<img src="images/friendView.png" alt="friendView"/>
+</div>
+
+<!-- *********搜索界面******** -->
+<!-- 魔石不够界面********* -->
+<div id="search0View" class="none">
+	<div>
+		<img src="images/nodiam.png" alt="nodiam">		
+		<button class="focus"></button>
+		<button class="friend"></button>
+	</div>
+</div>
+
+<!-- 魔石足够界面********* -->
+<div id="searchView" class="none">
+	<!-- loading: -->
+	<div class="none loading">
+	 	<!-- 绝对定位 --><!-- z-index:1002; -->
+		<img src="images/title1.png" alt="loading" class="title1"/>          
+		<img src="images/loading0.png" alt="loading" class="loading0"/> 
+		<img src="images/loading1.png" alt="loading" class="loading1"/>  
+		<img src="images/0.png" alt="loading" class="percent0"/>  
+		<img src="images/100.png" alt="loading" class="percent100"/>  
+	</div>
+
+	<!-- 获得奖品： -->
+	<div class="none get1">	
+		<img src="images/get.png" alt="get" class="get"/> 
+		<img src="images/potion.png" alt="potion"/><br/>
+		<button></button>
+	</div>
+	<div class="none get2">	
+		<img src="images/get.png" alt="get" class="get"/> 
+		<img src="images/rose.png" alt="rose"/><br/>
+		<button></button>
+	</div>
+	<div class="none get3">	
+		<img src="images/get.png" alt="get" class="get"/> 
+		<img src="images/magicWand.png" alt="magicWand"/><br/>
+		<button></button>
+	</div>
+	<div class="none get4">	
+		<img src="images/get.png" alt="not4" class="get"/> 
+		<img src="images/gift.png" alt="gift"/><br/>
+		<button></button>
+	</div>
+
+	<!-- 获得奖品：钻石 -->
+	<div class="none get5">	
+		<img src="images/get.png" alt="get" class="get"/> 
+		<img src="images/diamond50.png" alt="diamond"/><br/>  <!-- 50钻 -->
+		<button></button>
+	</div>
+
+	<!-- 失败： -->
+	<div class="none not">
+		<img src="images/not.png" alt="not" class="not"/> 
+		<button></button>
+	</div>
+</div>
+
+<!-- *********兑换枪炮玫瑰界面******** -->
+<!-- 兑换玫瑰规则界面 -->
+<div id="exchangeRule" class="none">
+	<div class="exContent">
+		<div id="rose1">
+			<img src="images/rose1.png" alt="rose1" class="rose1">
+			<p class="pTitle">集齐3种物品可领取<br/>玫瑰一只</p>
+			<p class="pCon">物品1<img src="images/potion.png" alt="potion"/></p>
+			<p class="pCon">物品2<img src="images/rose.png" alt="rose"/></p>
+			<p class="pCon">物品3<img src="images/magicWand.png" alt="magicWand"/></p><br/>
+			<a href="https://shop15555171.koudaitong.com/v2/goods/36cmz3hocpw7v?reft=1454830399184_1454830402634&spm=g207667260_h14519190&sf=wx_sm&from=singlemessage&isappinstalled=0"><button></button></a>   
+		</div>
+		<div id="roses">
+			<img src="images/roses.png" alt="roses" class="roses">
+			<p class="pTitle">集齐4种物品可领取<br/>玫瑰一束</p>
+			<p class="pCon">物品1<img src="images/potion.png" alt="potion"/></p>
+			<p class="pCon">物品2<img src="images/rose.png" alt="rose"/></p>
+			<p class="pCon">物品3<img src="images/magicWand.png" alt="magicWand"/></p>
+			<p class="pCon">物品4<img src="images/gift.png" alt="gift"/><br/></p>
+			<a href="https://shop15555171.koudaitong.com/v2/goods/2ocrsyrw2nxmj?reft=1454830399184_1454830425341&spm=g207667260_h14519190&sf=wx_sm&from=singlemessage&isappinstalled=0"><button></button></a>   <!-- 商城链接？？？ -->
+		</div>		
+	</div>
+</div>
+<!-- 兑换1支玫瑰界面 -->
+<div id="exchangeRose1" class="none">
+	<div>
+		<img src="images/ex1.png" alt="ex1">
+		<button  class='yes'></button>
+		<button class='no'></button>
+	</div>
+</div>
+<!-- 领取一支玫瑰界面 -->
+<div id='exchangeView1' class="none">
+	<p class="tip">留下您的收货信息,我们会很快为您发放礼品</p>
+	<form action='process_form1.php' method='post'>              
+        <section> 
+            <label for='user_name'>姓名</label>
+            <input type='text' class='user_name' name='user_name' required/>                           
+		</section>              
+        <section> 
+            <label for='phone'>手机</label> 
+            <input type='text' class='phone' name='phone' required/>                           
+        </section>        
+        <section> 
+            <label for='address'>收货地址</label>
+            <input type='text' class='address' name='address' placeholder='领取地址：高新区锦业二路六和园'  required/>                           
+        </section>             
+        <section> 
+            <label for='postcode'>邮编</label>
+            <input type='text' class ='postcode' name='postcode' required/>                           
+        </section>   
+        <section> 
+            <input type='submit' value=' ' />
+        </section>
+    </form>	
+    <div class="show"></div>
+    <div class="middle">
+		<p class="phone">客服电话：400-000-1111</p>
+		<p>西安地区以外的，需承担运费15元</p>
+		<p>西安地区可上门领取，也可选择同城快递</p>
+		<p>在收货地址内备注</p>
+	</div>
+	<div class='bottom'>
+		<img src="images/grlLogo.png" alt="logo" class="logo"/>
+		<div class="download">
+			<p>下载贵人礼APP，赢取更多好礼</p>
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.guirenli.android&g_f=991653 "><button></button></a>
+		</div>
+	</div>
+</div>
+<!-- 领取一束玫瑰界面 -->
+<div id='exchangeView2' class="none">
+	<p class="tip">留下您的收货信息,我们会很快为您发放礼品</p>
+	<form action='/process_form.php' method='post'>              
+        <section> 
+            <label for='user_name'>姓名</label>
+            <input type='text' class='user_name' name='user_name' required/>                           
+        </section>              
+        <section> 
+            <label for='phone'>手机</label> 
+            <input type='text' class='phone' name='phone' required/>                           
+        </section>        
+        <section> 
+            <label for='address'>收货地址</label>
+            <input type='text' class='address' name='address' placeholder='领取地址：高新区锦业二路六和园' />                           
+        </section>             
+        <section> 
+            <label for='postcode'>邮编</label>
+            <input type='text' class ='postcode' name='postcode' required/>                           
+        </section>   
+        <section> 
+            <input type='submit' value=' ' />
+        </section>
+    </form>	
+    <div class="middle">
+		<p class="phone">客服电话：400-799-9316</p>
+		<p>西安地区以外的，需承担运费15元</p>
+		<p>西安地区可上门领取，也可选择同城快递</p>
+		<p>在收货地址内备注</p>
+	</div>
+	<div class='bottom'>
+		<img src="images/grlLogo.png" alt="logo" class="logo"/>
+		<div class="download">
+			<p>下载贵人礼APP，轻松送出情义礼物</p>
+			<a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.guirenli.android&g_f=991653 "><button></button></a>
+		</div>
+	</div>
+</div>
+<div id="submitView" class="none">
+	您已提交！
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+*{padding:0;margin:0;}
+body{font-family:'微软雅黑'; overflow:hidden;/*清楚页面的滚动条*/ background: #fff;} 
+.none{display: none;}
+/************顶部标题样式***********/
+header{
+	width:100%; 
+	text-align: center;
+	background:url(../images/bg.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+header img{width: 80.4%;}
+/*************头部样式*************/
+#top{ 
+	color: #fff;
+	background:url(../images/pink.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;
+}
+#top img{margin-left:5.3%; margin-right:2.13%;vertical-align: middle;}
+#top .btn{float:right;}
+#top button{
+	outline:0; border:0;
+	display:inline-block;   
+}
+#top .friend{
+	background:url(../images/inviteA.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+#top .focus{
+	background:url(../images/focusA.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+/*************内容样式*************/
+#content{
+	position:absolute; 
+	margin:0 auto; text-align: center;
+}
+#content .first,#content .second{
+	float:left; width:33.86%; 
+/*	margin-top: 4%; /*JS*/
+}
+#content .first{ margin-left:10.675%; margin-right:10.93%; }
+#content button{
+	display:inline-block;
+	background:url(../images/search.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  	
+}
+/*************底部样式*************/
+footer{
+	position:absolute;
+	bottom:0; left:0;
+	width:100%; color: #888; /*js改*/
+	text-align: center;
+}
+footer #count li{
+	list-style:none;
+	float:left; 
+	background:url(../images/potionA.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;
+}
+footer #count li.rose{
+	background:url(../images/roseA.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+footer #count li.magicWand{
+	background:url(../images/magicWandA.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+footer #count li.gift{
+	background:url(../images/giftA.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+footer #count img{
+	width: 70.588%;
+	margin-right:0;
+}
+footer #count span{
+	position: absolute;;
+}
+footer #exchanges{
+	position:absolute;z-index: 1000;
+	bottom:2px; right:2px; 
+	background:url(../images/grlRoses.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+footer #exchange1{
+	position:absolute; z-index: 1000;
+	bottom:2px; right:2px; 
+	background:url(../images/grlRose1.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+footer #star{
+	position:absolute; 
+	bottom:2px; right:2px;
+}
+/*************遮罩层*************/
+.mask{  
+	background-color:#000;
+	opacity:0.8;
+	filter: alpha(opacity=80);
+	position:absolute; 
+	left:0; top:0;
+	z-index:1000;
+}
+/*************关注界面*************/
+#focusView{
+	position:absolute; z-index:1001; 
+	line-height:2em; /*JS*/
+	color: #3d3d3d;
+	margin:0px auto; text-align:center; 
+	opacity:0.95;
+	filter: alpha(opacity=95);
+	background:url(../images/dialog1.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#focusView .title2{
+	position: absolute; top:8.3%;  left:8.405%; 
+	width: 83.19%; /*height:4.97%; */
+}
+#focusView .wm{
+	position: absolute; top:20.67%;  left:25%; 
+	width: 50%; 
+}
+#focusView .diamond{
+	width: 6.67%;  
+	margin: 0 1.85%;
+}
+#focusView p{margin-top:80%;}
+
+/*************邀请好友界面*************/
+#friendView{ 
+	left:0; top:0;
+	position:absolute; z-index:1001; 
+	margin:0px auto; text-align:center; 
+}
+#friendView img{
+	position: absolute; top:18%;  left:7.69%; 
+	width: 84.62%;
+}
+#friendView img.row{
+	position: absolute; top:1%;  left:78.5%; 
+	width: 13.4%; 
+}
+/*************搜索界面*************/
+#search0View{
+	position:absolute; z-index:1001; 
+	font-size:18px; line-height:1.5em;
+	margin:0px auto; text-align:center; 
+	opacity:0.95;
+	filter: alpha(opacity=95);
+	background:url(../images/dialog.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#search0View img{
+	position: absolute; top:15.69%;  left:16.735%; 
+	width: 66.53%; /*height:10.54%; */
+}
+#search0View button{
+	left: 15.415%; top:41.91%;
+	position: absolute; 
+	width: 69.17%; height:16.67%;   /*???*/
+	outline:0; border:0;
+}
+#search0View button.focus{
+	background:url(../images/focus.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#search0View button.friend{
+	top:63.97%;
+	background:url(../images/friend.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#searchView{
+	position:absolute; z-index:1001; 
+	font-size:18px; line-height:1.5em;
+	margin:0px auto; text-align:center; /*padding: js*/
+	opacity:0.95;
+	filter: alpha(opacity=95);
+	background:url(../images/dialog.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#searchView .loading .title1{
+	position: absolute; top:19.6%;  left:28%; 
+	width: 44%; /*height:10%;*/ 
+}
+#searchView .loading .loading0{
+	position: absolute; top:46.3%;  left:7%;
+	width: 86%; height:14.7%; 
+}
+#searchView .loading .loading1{
+	position: absolute; top:46.3%;  left: 7%;
+	width: 0; height:14.7%; 
+}
+#searchView .loading .percent0{
+	position: absolute; top:68.4%;  left:7%; 
+	width: 6%; /*height:5.9%; */
+}
+#searchView .loading .percent100{
+	position: absolute; top:68.4%;  left: 85%;
+	width: 10%; /* height:5.9%; */
+}
+#searchView img.not{
+	position: absolute; top:30.4%;  left: 21.25%;
+	width: 57.5%; /*height:10.8%;*/
+}
+/*奖品*/
+#searchView .get1 img,#searchView .get2 img,
+#searchView .get3 img,#searchView .get4 img,#searchView .get5 img{
+	position: absolute; top:27.7%;  left: 40.63%;
+	width: 18.75%; /*height:33.09%;*/
+}
+/*钻石*/
+/*#searchView .get5 img{position: absolute; width:14%; left: 43%; top:40%;}*/
+
+#searchView img.get{
+	position: absolute; top:11.76%;  left: 15.7%;
+	width: 68.6%;/* height:10%;*/ 
+}
+#searchView .get1 button,#searchView .get2 button,#searchView .get3 button,#search3View .get4 button,#searchView .get5{top:69.6%;}
+#searchView button{
+	position: absolute; top:70.6%;  left: 41.65%;
+	width: 16.7%; height:16.67%; 
+	outline:0; border:0;
+	background: url(../images/confirm.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+
+/*************兑换玫瑰界面*************/
+/*****兑换玫瑰规则界面***/
+#exchangeRule{
+	position:absolute;  z-index:1001;
+	line-height:1.28em; 
+	margin:0 auto; 
+	opacity:0.95; color:#3d3d3d; 
+	filter: alpha(opacity=95);
+	background: url(../images/dialog1.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#exchangeRule .exContent #rose1,#exchangeRule .exContent #roses{
+	float:left; width:50%; 
+	text-align: center;
+}
+#exchangeRule .pTitle{
+	text-align: left; margin-left: 17.8%;
+}
+#exchangeRule .pCon{
+	font-size:0.857em; 
+}
+#exchangeRule p img{
+	width:16.7%; margin-left:6.9%; vertical-align:middle;
+}
+
+#exchangeRule .exContent #rose1 .rose1,#exchangeRule .exContent #roses .roses{
+	width:53.9%; 
+	margin-top: 6.9%;
+	margin-bottom: 3.69%;
+}
+#exchangeRule button{
+	position: absolute;   left: 12.65%; bottom:10.8%;/*JS*/
+	width: 24.7%; height:7.85%;  
+	outline:0; border:0;
+	background: url(../images/buy.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#exchangeRule #roses button{
+	left:62.65%;
+}
+/*****兑换1支玫瑰界面***/
+#exchangeRose1{
+	position:absolute;  z-index:1001;
+	margin:0 auto; text-align:center; 
+	opacity:0.95; filter: alpha(opacity=95);
+	background: url(../images/dialog.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#exchangeRose1 img{
+	position: absolute; top:14.7%;  left:9.93%; 
+	width: 80.14%; /*height:34.56%;*/ 
+}
+#exchangeRose1 button{
+	position: absolute; bottom:11.76%;  left:12.64%; 
+	width: 24.72%; height:16.67%;
+	outline:0; border:0;
+}
+#exchangeRose1 button.yes{
+	background: url(../images/yes.png) no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+#exchangeRose1 button.no{
+	background: url(../images/no.png) no-repeat; left:62.64%;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+
+
+/******领取玫瑰界面*****/
+#exchangeView1,#exchangeView2{
+	position:absolute; left:0; top:0; z-index:1001; 
+	/*font-size:15px; */	/*JS改*/
+	line-height:1.5em;	/*JS改*/
+	background:#fff; 
+	padding:0 0px;      /*JS改top*/
+	text-align: middle;
+	color: #3d3d3d;
+	text-align: center;
+}
+#exchangeView1 p.tip,#exchangeView2 p.tip{font-size: 1.27em;}
+#exchangeView1 form,#exchangeView2 form{
+	text-align: center;
+    /*width:100%;           */
+    /*padding:10px;			/*JS ？*/
+    /*border:1px solid #000;*/
+}
+form section {
+    overflow:hidden;     /*强制section包含表单控件及标注*/
+   /* padding-top:20px;*/    /*JS ？表单间距*/
+}   
+form section label{  /*表单控件的标注*/
+    /*width:80px; */         /*JS ？*/
+    display:block;float:left; /*line-height:35px;*//*JS ？*/
+    font-size:1.27em; text-align: left;
+    /*font-weight:600; */
+    /*clear:both;*/   
+}   
+form section input{
+    /*width:250px;*/        /*JS ？*/
+    float:right; /*padding-left: 5px;*/  /*JS ？*/
+    font-size:1.067em;		/*JS ？*/   
+    outline:none;                
+    border:1px solid #f291b0;
+    border-radius:6px;
+    letter-spacing:1px; 
+}   
+form section input[type="submit"] { 
+    float:none;        
+    border:0;  outline:none;  
+    cursor:pointer;
+    background: url(../images/submit.png) no-repeat; 
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; 
+}
+form > section:last-child{  /*form的子元素，最后一个是section元素的，居中提交按钮*/
+    text-align:center;
+}
+#exchangeView1 div.middle,#exchangeView2 div.middle{text-align: center;}
+#exchangeView1 p.phone,#exchangeView2 p.phone{font-size: 1.2em; margin-bottom:10px;}/*JS ？*/
+#exchangeView1 div.bottom,#exchangeView2 div.bottom{
+	position: absolute; bottom:0; left: 0; width: 100%;
+	background: #F2F2F2;
+	/*padding:10px;*/ /*JS ？*/
+}
+#exchangeView1 div.logo,#exchangeView2 div.logo{float: left; /*width: 100px;*/} /*JS改*/
+#exchangeView1 div.download,#exchangeView2 div.download{ float: right;}
+#exchangeView1 div.download p,#exchangeView2 div.download p{font-size: 1.27em; margin-right:15px;} /*JS改*/
+#exchangeView1 button,#exchangeView2 button{ 
+	margin-top:15px;margin-right:15px;
+	width: 90%; height:28px;
+	background: url(../images/download.png) no-repeat; 
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;  
+}
+#submitView{
+	position: absolute;left:0; top:0; bottom:0;right:0;z-index:1001; 
+	margin:0px auto; text-align:center; background: #fff;
+	color: #EC5A5A; font-size: 22px; 
+}
+/*************基本按钮样式*************/
+button{
+	/*height:35px;  */
+	outline:0; border:0; 
+	letter-spacing:1px; 
+}
+/*************基本链接样式*************/
+a{
+/*	color:#000;*/
+	text-decoration:none;
+	/*display:block;*/
+}
