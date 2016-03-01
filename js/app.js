@@ -949,7 +949,7 @@ window.onload = function () {
 
             //读取用户数据
             loadStorage: function(){
-            	if(localStorage.getItem("submitOr") &&null&&localStorage.getItem("potion") &&localStorage.getItem("rose")&&localStorage.getItem("magicWand") &&localStorage.getItem("gift")&&localStorage.getItem("totalAmount")){
+            	if(localStorage.getItem("submitOr") &&localStorage.getItem("potion") &&localStorage.getItem("rose")&&localStorage.getItem("magicWand") &&localStorage.getItem("gift")&&localStorage.getItem("totalAmount")){
 	        		potion = localStorage.getItem("potion");
 	        		countPotion.text(potion);
 	                rose = localStorage.getItem("rose");
