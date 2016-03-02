@@ -1,5 +1,6 @@
 
-演示地址：http://rose111.applinzi.com/guirenli/index.php<br/>
+### [演示地址](http://rose111.applinzi.com/guirenli/index.php)
+手机体验最佳。
 
 游戏背景：<br/>
 这是为情人节设计的小游戏，需集齐物品兑奖。该游戏界面简洁，玩法新颖，操作简单，无需花费太多时间和精力，便于人们在工作、学习之余休闲、娱乐。
